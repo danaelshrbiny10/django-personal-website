@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class Home(models.Model):
-    name         = models.TextField(max_length=20)
-    description  = models.CharField(max_length=500)
+    name         = models.CharField(max_length=50)
+    description  = models.TextField(max_length=5000) 
     image        = models.ImageField(upload_to='home/')
 
     def __str__(self):
