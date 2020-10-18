@@ -13,5 +13,5 @@ class Home(models.Model):
 class Meta:
         verbose_name        = 'Home'
         verbose_name_plural = 'Homes'
-        ordering            = ('name',)
-        # ordering            = ('-name',)         
+        #ordering            = ('name',)
+        ordering            = ['-id']         
