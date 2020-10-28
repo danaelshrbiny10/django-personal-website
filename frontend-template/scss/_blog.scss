@@ -1,43 +1,37 @@
-
 /* Latest Blog Area css
 ============================================================================================ */
 .latest_blog_area{
 	
 }
 .latest_blog_inner{
-	
+	margin-bottom: -30px;
 }
 .l_blog_item{
-	.l_blog_img{
-		
+	margin-bottom: 30px;
+	.date{
+		font-size: 13px;
+		font-family: $rob;
+		font-weight: normal;
+		color: $pfont;
+		margin-top: 20px;
+		display: block;
+		margin-bottom: 15px;
 	}
-	.l_blog_text{
-		.date{
-			margin-top: 24px;
-			margin-bottom: 15px;
-			a{
-				color: $pfont;
-				font-size: 12px;
-				font-family: $rob;
-			}
-		}
+	h4{
+		font-size: 18px;
+		line-height: 24px;
+		color: $dip;
+		border-bottom: 1px solid #eeeeee;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		@include transition;
+	}
+	p{
+		margin-bottom: 0px;
+	}
+	&:hover{
 		h4{
-			font-size: 21px;
-			color: $dip;
-			margin-bottom: 20px;
-			@include transition;
-			font-family: $hee;
-			font-weight: bold;
-			text-transform: uppercase;
-			max-width: 300px;
-			&:hover{
-				color: $baseColor;
-			}
-		}
-		p{
-			margin-bottom: 0px;
-			font-size: 14px;
-			font-family: $rob;
+			color: $baseColor;
 		}
 	}
 }
@@ -46,110 +40,7 @@
 
 
 
-/* Causes Area css
-============================================================================================ */
-.causes_area{
-}
-.causes_slider{
-	.owl-dots{
-		text-align: center;
-		margin-top: 80px;
-		.owl-dot{
-			height: 14px;
-			width: 14px;
-			background: #eeeeee;
-			display: inline-block;
-			margin-right: 7px;
-			&:last-child{
-				margin-right: 0px;
-			}
-			&.active{
-				background: $baseColor;
-			}
-		}
-	}
-}
-.causes_item{
-	background: #fff;
-	.causes_img{
-		position: relative;
-		.c_parcent{
-			position: absolute;
-			bottom: 0px;
-			width: 100%;
-			left: 0px;
-			height: 3px;
-			background: rgba(255, 255, 255, .5);
-			span{
-				width: 70%;
-				height: 3px;
-				background: $baseColor;
-				position: absolute;
-				left: 0px;
-				bottom: 0px;
-				&:before{
-					content: "75%";
-					position: absolute;
-					right: -10px;
-					bottom: 0px;
-					background: $baseColor; 
-					color: #fff;
-					padding: 0px 5px;
-				}
-			}
-		}
-	}
-	.causes_text{
-		padding: 30px 35px 40px 30px;
-		h4{
-			color: $dip;
-			font-family: $rob;
-			font-size: 18px;
-			font-weight: 600;
-			margin-bottom: 15px;
-			cursor: pointer;
-			&:hover{
-				color: $baseColor;
-			}
-		}
-		p{
-			font-size: 14px;
-			line-height: 24px;
-			color: $pfont;
-			font-weight: 300;
-			margin-bottom: 0px;
-		}
-	}
-	.causes_bottom{
-		a{
-			width: 50%;
-			border: 1px solid $baseColor;
-			text-align: center;
-			float: left;
-			line-height: 50px;
-			background: $baseColor;
-			color: #fff;
-			font-family: $rob;
-			font-size: 14px;
-			font-weight: 500;
-			& + a{
-				border-color: #eeeeee;
-				background: #fff;
-				font-size: 14px;
-				color: $dip;
-			}
-		}
-	}
-}
-/* End Causes Area css
-============================================================================================ */
-
-
-
 /*================= latest_blog_area css =============*/
-.latest_blog_area{
-    
-}
 .single-recent-blog-post{
     margin-bottom: 30px;
     .thumb{
@@ -255,7 +146,10 @@
     }
     &:hover{
         .categories_details{
-            background: rgba(56, 152, 248, .85);
+			background-image: -moz-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
+			background-image: -webkit-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
+			background-image: -ms-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
+			opacity: 0.851;
         }
     }
 }
@@ -365,7 +259,7 @@
                 padding-left: 20px;
                 border-radius: 45px;
                 z-index: 0;
-				background: $baseColor;
+                background: $baseColor;
                 @include placeholder{
                     color: #fff;
                 }
@@ -505,9 +399,7 @@
             }
         }
         .bbtns{
-			background-image: -moz-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
-			background-image: -webkit-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
-			background-image: -ms-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
+            background: $baseColor;
             color: #fff;
             font-size: 12px;
             line-height: 38px;
@@ -534,9 +426,9 @@
                     color: $dip;
                     font-size: 12px;
                     &:hover{
-						background-image: -moz-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
-						background-image: -webkit-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
-						background-image: -ms-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
+						background-image: -moz-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
+						background-image: -webkit-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
+						background-image: -ms-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
                         color: #fff;
                     }
                 }
@@ -800,7 +692,7 @@
     border: 1px solid #eee;
     padding: 47px 30px 43px;
     margin-top: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     h4 {
         text-align: center;
         margin-bottom: 50px;

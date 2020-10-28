@@ -15,20 +15,20 @@
             .nav-item{
 				margin-right: 45px;
                 .nav-link{
-                    font: 500 12px/100px $rob;
+                    font: 500 12px/120px $rob;
                     text-transform: uppercase;
-                    color: $dip;
-                    padding: 0px; 
+                    color: #fff;
+                    padding: 0px;
                     display: inline-block;
                     &:after{
                         display: none;
                     }
                 }
-//                &:hover, &.active{
-//                    .nav-link{
-//                        color: $baseColor;
-//                    }
-//                }
+                &:hover, &.active{
+                    .nav-link{
+                        color: #fff;
+                    }
+                }
                 &.submenu{
                     position: relative;
                     ul{
@@ -38,6 +38,7 @@
                         box-shadow: none;
                         margin: 0px;
                         background: #fff;
+						box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
                         @media (min-width: 992px){
                             position: absolute;
                             top: 120%;
@@ -51,7 +52,6 @@
                             border: none;
                             padding: 0px;
                             border-radius: 0px;
-							box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.4);
                         }
                         &:before{
                             content: "";
@@ -87,7 +87,7 @@
                             }
                             &:hover{
                                 .nav-link{
-									background: $baseColor;
+                                    background: $baseColor;
                                     color: #fff;
                                 }
                             }    
@@ -122,6 +122,9 @@
             }
         }
     }
+//	& + section, & + row, & + div{
+//		margin-top: 120px;
+//	}
 	&.navbar_fixed{
 		.main_menu{
 			position: fixed;
@@ -129,7 +132,7 @@
 			top: -70px;
 			left: 0;
 			right: 0;
-			background: #fff;
+			background: #000;  
 			transform: translateY(70px);
 			transition: transform 500ms ease, background 500ms ease;
 			-webkit-transition: transform 500ms ease, background 500ms ease;
@@ -145,89 +148,72 @@
 			}
 		}
 	}
-	&.white_menu{
-		.navbar{
-			.navbar-brand{
-				@media(min-width: 992px){
-					img{
-						display: none;
-						& + img{
-							display: inline-block;
-						}
-					}
-				}
-				@media(max-width: 991px){
-					img{
-						display: inline-block;
-						& + img{
-							display: none;
-						}
-					}
-				}
-			}
-			.nav{
-				.nav-item{
-					.nav-link{
-						color: #fff;
-					}
-				}
-			}
-		}
-		&.navbar_fixed{
-			.main_menu{
-				.navbar{
-					.navbar-brand{
-						img{
-							display: inline-block;
-							& + img{
-								display: none;
-							}
-						}
-					}
-					.nav{
-						.nav-item{
-							.nav-link{
-								line-height: 70px;
-								color: $dip;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
 }
 
 .top_menu{
-	background: #ec9d5f;
-	.float-left{
-		a{
-			line-height: 40px;
+	background: #f9f9ff;
+	.header_social{
+		li{
 			display: inline-block;
-			color: #fff;
-			font-family: $rob;
-			text-transform: uppercase;
-			font-size: 12px;
-			margin-right: 50px;
-			@include transition;
+			margin-right: 15px; 
+			a{
+				font-size: 14px;
+				color: $pfont;
+				display: inline-block;
+				line-height: 42px;
+				@include transition;
+			}
 			&:last-child{
 				margin-right: 0px;
 			}
 			&:hover{
-				color: $baseColor;
+				a{
+					color: $baseColor;
+				}
 			}
 		}
 	}
-	.float-right{
-		.pur_btn{
-			background: $baseColor;
-			color: #fff;
-			font-family: $rob;
-			line-height: 40px;
-			display: block;
-			padding: 0px 40px;
-			font-weight: 500;
-			font-size: 12px;
+	.dn_btn{
+		line-height: 42px;
+		display: inline-block;
+		font-size: 12px;
+		margin-right: 30px;
+		font-family: $rob;
+		font-weight: normal;
+		color: $pfont;
+		@include transition;
+		&:hover{
+			color: $baseColor;
+		}
+		&:last-child{
+			margin-right: 0px;
+		}
+	}
+	.lan_pack{
+		height: 30px;
+		border: 1px solid #eeeeee;
+		border-radius: 3px;
+		line-height: 28px;
+		font-size: 12px;
+		font-family: $rob;
+		font-weight: 500;
+		padding-left: 19px;
+		padding-right: 36px; 
+		color: $pfont; 
+		background: #f9f9ff;
+		margin-right: 5px;
+		margin-top: 8px;
+		.current{
+			color: $pfont;
+		}
+		&:after{
+			content: "\f0d7";
+			border: none !important;
+			font: normal normal normal 12px/1 FontAwesome;
+			transform: rotate(0deg);
+			height: auto;
+			margin-top: -6px;
+			right: 20px;
 		}
 	}
 }

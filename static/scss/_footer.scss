@@ -1,7 +1,7 @@
 /* Footer Area css
 ============================================================================================ */
 .footer_area{
-	background: #000410;
+	background: #000;
 }
 .footer_inner{
 	
@@ -15,7 +15,6 @@
 		font-weight: bold;
 		font-family: $hee;
 		margin-bottom: 0px;
-		text-transform: uppercase;
 	}
 }
 .ab_widget{
@@ -34,7 +33,7 @@
 	}
 }
 .news_widget{
-	padding-left: 15px;
+	padding-right: 15px;
 	p{
 		font-size: 14px;
 		line-height: 24px;
@@ -45,11 +44,12 @@
 	.input-group{
 		input{
 			height: 40px;
-			background: #fff;
+			background: transparent;
 			border-radius: 0px;
 			width: 80%;
 			border: none;
 			padding: 0px 15px;
+			border: 1px solid #1e233b;
 			font-size: 14px;
 			font-family: $rob;
 			color: #cccccc;
@@ -64,12 +64,13 @@
 		}
 		.sub-btn{
 			border-radius: 0px;
-			background-image: -moz-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
-			background-image: -webkit-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
-			background-image: -ms-linear-gradient( 0deg, rgb(132,144,255) 0%, rgb(98,189,252) 100%);
+			background-image: -moz-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
+			background-image: -webkit-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
+			background-image: -ms-linear-gradient( 0deg, rgb(118,109,255) 0%, rgb(136,243,255) 100%);
 			outline: none !important;
 			box-shadow: none !important;
 			padding: 0px;
+			border: none;
 			width: 42px;
 			cursor: pointer;
 			color: #fff;

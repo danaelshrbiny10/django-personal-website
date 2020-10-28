@@ -32,41 +32,69 @@
 	parallaxEffect();
 	
 	
+//	$('.courses_area').imagesLoaded(function(){
+//        $('.courses_inner').isotope({ 
+//            layoutMode: 'masonry',
+//			percentPosition: true,
+//			masonry: {
+//				columnWidth: 1,
+//			}
+//        })
+//    });
+	
+	
+	
+	
+	/*----------------------------------------------------*/
+    /*  portfolio_isotope
+    /*----------------------------------------------------*/
+   
+//	$('.courses_inner').imagesLoaded(function(){
+//        $('.courses_inner').isotope({ 
+//            layoutMode: 'masonry',
+//            percentPosition:true,
+//            masonry: {
+//                columnWidth: 1,
+//            }            
+//        })
+//    });
+	
+	
 	/*----------------------------------------------------*/
     /*  Clients Slider
     /*----------------------------------------------------*/
-    function clients_slider(){
-        if ( $('.clients_slider').length ){
-            $('.clients_slider').owlCarousel({
-                loop:true,
-                margin: 30,
-                items: 5,
-                nav: false,
-                autoplay: false,
-                smartSpeed: 1500,
-                dots:false, 
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    400: {
-                        items: 2,
-                    },
-                    575: {
-                        items: 3,
-                    },
-                    768: {
-                        items: 4,
-                    },
-                    992: {
-                        items: 5,
-                    }
-                }
-            })
-        }
-    }
-    clients_slider();
+//    function clients_slider(){
+//        if ( $('.clients_slider').length ){
+//            $('.clients_slider').owlCarousel({
+//                loop:true,
+//                margin: 30,
+//                items: 5,
+//                nav: false,
+//                autoplay: false,
+//                smartSpeed: 1500,
+//                dots:false, 
+//                responsiveClass: true,
+//                responsive: {
+//                    0: {
+//                        items: 1,
+//                    },
+//                    400: {
+//                        items: 2,
+//                    },
+//                    575: {
+//                        items: 3,
+//                    },
+//                    768: {
+//                        items: 4,
+//                    },
+//                    992: {
+//                        items: 5,
+//                    }
+//                }
+//            })
+//        }
+//    }
+//    clients_slider();
 	/*----------------------------------------------------*/
     /*  MailChimp Slider
     /*----------------------------------------------------*/
@@ -87,6 +115,7 @@
 		time: 1000
 	});
 	
+	
 	$(".skill_main").each(function() {
         $(this).waypoint(function() {
             var progressBar = $(".progress-bar");
@@ -100,15 +129,14 @@
         });
     });
 	
-	
 	/*----------------------------------------------------*/
     /*  Isotope Fillter js
     /*----------------------------------------------------*/
-	function projects_isotope(){
-        if ( $('.projects_area').length ){
+	function gallery_isotope(){
+        if ( $('.gallery_f_inner').length ){
             // Activate isotope in container
-			$(".projects_inner").imagesLoaded( function() {
-                $(".projects_inner").isotope({
+			$(".gallery_f_inner").imagesLoaded( function() {
+                $(".gallery_f_inner").isotope({
                     layoutMode: 'fitRows',
                     animationOptions: {
                         duration: 750,
@@ -118,12 +146,12 @@
             });
 			
             // Add isotope click function
-            $(".filter li").on('click',function(){
-                $(".filter li").removeClass("active");
+            $(".gallery_filter li").on('click',function(){
+                $(".gallery_filter li").removeClass("active");
                 $(this).addClass("active");
 
                 var selector = $(this).attr("data-filter");
-                $(".projects_inner").isotope({
+                $(".gallery_f_inner").isotope({
                     filter: selector,
                     animationOptions: {
                         duration: 450,
@@ -135,8 +163,7 @@
             });
         }
     }
-    projects_isotope();
-	
+    gallery_isotope();
 	
 	/*----------------------------------------------------*/
     /*  Testimonials Slider
@@ -165,36 +192,17 @@
     }
     testimonials_slider();
 	
-	
-	/*----------------------------------------------------*/
-    /*  Testimonials Slider
-    /*----------------------------------------------------*/
-//    function testimonials_slider(){
-//        if ( $('.testi_slider').length ){
-//            $('.testi_slider').owlCarousel({
-//                loop:true,
-//                margin: 30,
-//                items: 2,
-//                nav: true,
-//                autoplay: false,
-//                smartSpeed: 1500,
-//                dots:true, 
-//				navContainer: '.testimonials_area',
-//                navText: ['<i class="lnr lnr-arrow-up"></i>','<i class="lnr lnr-arrow-down"></i>'],
-//                responsiveClass: true,
-//                responsive: {
-//                    0: {
-//                        items: 1,
-//                    },
-//                    768: {
-//                        items: 2,
-//                    },
-//                }
-//            })
-//        }
-//    }
-//    testimonials_slider();
-	
+	$(document).ready(function() {
+		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+			disableOn: 700,
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+
+			fixedContentPos: false
+		});
+	}); 
 	
 	/*----------------------------------------------------*/
     /*  Google map js
@@ -404,46 +412,6 @@
                     ]
                 }
             ]
-        });
-    }
-	
-	/*----------------------------------------------------*/
-    /*  Google map js
-    /*----------------------------------------------------*/
-     
-    if ( $('#mapBox2').length ){
-        var $lat = $('#mapBox2').data('lat');
-        var $lon = $('#mapBox2').data('lon');
-        var $zoom = $('#mapBox2').data('zoom');
-        var $marker = $('#mapBox2').data('marker');
-        var $info = $('#mapBox2').data('info');
-        var $markerLat = $('#mapBox2').data('mlat');
-        var $markerLon = $('#mapBox2').data('mlon');
-        var map = new GMaps({
-        el: '#mapBox2',
-        lat: $lat,
-        lng: $lon,
-        scrollwheel: false,
-        scaleControl: true,
-        streetViewControl: false,
-        panControl: true,
-        disableDoubleClickZoom: true,
-        mapTypeControl: false,
-        zoom: $zoom,
-            styles: [
-				{
-					"featureType": "administrative.country",
-					"elementType": "geometry",
-					"stylers": [
-						{
-							"visibility": "simplified"
-						},
-						{
-							"hue": "#ff0000"
-						}
-					]
-				}
-			]
         });
     }
 	
